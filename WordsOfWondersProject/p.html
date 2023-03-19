@@ -1,0 +1,314 @@
+<!--m o n e l
+lone
+mole
+lemon
+one
+men
+melon
+
+
+
+
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/27cd70c70a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="p.css">
+    <script src="./jquery-3.6.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Didehan Topsakal Project</title>
+    
+    
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="border">
+        <div id="main">
+             <h1 id="baslik">CTIS255-PROJECT-DIDEHAN TOPSAKAL</h1>
+            <table id="puzzle">
+                <tr>
+                    <td ></td>
+                    <td ></td>
+                    <td id="vis" class="LEMON"><p>L</p></td>
+                    <td></td>
+                    <td id="vis" class="MOLE"><p>M</p></td>
+                    <td></td>
+                    <td id="vis" class="LONE"><p>L</p></td>
+                </tr>
+                <tr>
+                    <td id="vis" class="ONE"><p>O</p></td>
+                    <td id="vis" class="ONE"><p>N</p></td>
+                    <td id="vis" class="LEMON ONE"><p>E</p></td>
+                    <td></td>
+                    <td id="vis" class="MOLE"><p>O</p></td>
+                    <td></td>
+                    <td id="vis" class="LONE"><p>O</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="vis" class="LEMON MELON"><p>M</p></td>
+                    <td id="vis" class="MELON"><p>E</p></td>
+                    <td id="vis" class="MOLE MELON"><p>L</p></td>
+                    <td id="vis" class="MELON"><p>O</p></td>
+                    <td id="vis" class="LONE MELON"><p>N</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id="vis" class="LEMON"><p>O</p></td>
+                    <td></td>
+                    <td id="vis" class="MOLE"><p>E</p></td>
+                    <td></td>
+                    <td id="vis" class="LONE"><p>E</p></td>
+                </tr>
+                <tr>
+                    <td id="vis" class="MEN"><p>M</p></td>
+                    <td id="vis" class="MEN"><p>E</p></td>
+                    <td id="vis" class="LEMON MEN"><p>N</p></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div id="word"></div>
+            <div id="cheat"><i class="fa-regular fa-lightbulb"></i></div>
+            <div id="circle">
+                <div id="x1"></div>
+                <div id="x2">
+                    <div id="y1"></div>
+                    <div id="y2"></div>
+                </div>
+                <div id="shuffle"><i class="fa-solid fa-shuffle"></i></div>
+                <div id="x3">
+                    <div id="z1"></div>
+                    <div id="z2"></div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+    let words = ["LEMON", "ONE","MELON","MOLE","LONE","MEN"];
+    let array = ["L", "E", "M", "O", "N"];
+    let selectedWord= "";
+    
+    $("p").hide();
+
+    for(var i = 0 ; i < 5; i++){
+     var num = Math.floor(Math.random() * 5);
+    if(array[num] != ""){
+        switch(i){
+        case 0:
+                $("#x1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 1:
+                $("#y1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 2:
+                $("#y2").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 3:
+                $("#z1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 4:
+                $("#z2").text(`${array[num]}`);
+                array[num] = "";break;
+        }    
+    }else{
+            
+            i--;
+    }
+    }
+
+    $("#shuffle").click(function(){
+        let array = ["L", "E", "M", "O", "N"];
+        for(var i = 0 ; i < 5; i++){
+     var num = Math.floor(Math.random() * 5);
+    if(array[num] != ""){
+        switch(i){
+        case 0:
+                $("#x1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 1:
+                $("#y1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 2:
+                $("#y2").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 3:
+                $("#z1").text(`${array[num]}`);
+                array[num] = ""; break;
+        case 4:
+                $("#z2").text(`${array[num]}`);
+                array[num] = "";break;
+        }    
+    }else{
+            
+            i--;
+    }
+    }
+    })
+
+
+    
+    
+    
+    
+    $("#x1").click(function(e){
+        if(selectedWord.includes($("#x1").text())){
+            $("#x1").effect("shake");
+        }
+        else{
+            selectedWord+= $("#x1").text();
+            $("#word").append($("#x1").text());
+            $("#x1").css("background","rgba(0, 0, 0, 0.5)");
+            $("#shuffle").animate({fontSize: "0"}, 200);
+        }
+    })
+    $("#y1").click(function(e){
+        if(selectedWord.includes($("#y1").text())){
+            $("#y1").effect("shake");
+        }
+        else{
+            selectedWord+= $("#y1").text();
+            $("#word").append($("#y1").text());
+            $("#y1").css("background","rgba(0, 0, 0, 0.5)");
+            $("#shuffle").animate({fontSize: "0"}, 200);
+        }
+    })
+    $("#y2").click(function(e){
+        if(selectedWord.includes($("#y2").text())){
+            $("#y2").effect("shake");
+        }
+        else{
+            selectedWord+= $("#y2").text();
+            $("#word").append($("#y2").text());
+            $("#y2").css("background","rgba(0, 0, 0, 0.5)");
+            $("#shuffle").animate({fontSize: "0"}, 200);
+        }
+    })
+    $("#z1").click(function(e){
+        if(selectedWord.includes($("#z1").text())){
+            $("#z1").effect("shake");
+        }
+        else{
+            selectedWord+= $("#z1").text();
+            $("#word").append($("#z1").text());
+            $("#z1").css("background","rgba(0, 0, 0, 0.5)");
+            $("#shuffle").animate({fontSize: "0"}, 200);
+        }
+    })
+    $("#z2").click(function(e){
+        if(selectedWord.includes($("#z2").text())){
+            $("#z2").effect("shake");
+        }
+        else{
+            selectedWord+= $("#z2").text();
+            $("#word").append($("#z2").text());
+            $("#z2").css("background","rgba(0, 0, 0, 0.5)");
+            $("#shuffle").animate({fontSize: "0"}, 200);
+        }
+    })
+
+    let found = [];
+    var d = 0;
+
+    $(document).contextmenu(function() {
+        return false;
+    });
+
+    $("#circle").contextmenu(function(e){
+        if(found.includes(selectedWord)){
+            $(`.${selectedWord} p`).animate({
+                opacity: '0'
+            }, 100);
+            $(`.${selectedWord} p`).animate({
+                opacity: '1'
+            }, 100);
+            $(`.${selectedWord} p`).animate({
+                opacity: '0'
+            }, 100);
+            $(`.${selectedWord} p`).animate({
+                opacity: '1'
+            }, 100);
+            $(`.${selectedWord} p`).animate({
+                opacity: '0'
+            }, 100);
+            $(`.${selectedWord} p`).animate({
+                opacity: '1'
+            }, 100);
+            selectedWord = "";
+            $("#word").text("");
+            $("#x1").css("background", "none");
+            $("#y1").css("background", "none");
+            $("#y2").css("background", "none");
+            $("#z1").css("background", "none");
+            $("#z2").css("background", "none");
+        }else{
+        if(words.includes(selectedWord)){
+            $(`.${selectedWord} p`).show();
+            
+            found[d] = selectedWord;
+            d ++;
+            
+            $(`.${selectedWord}`).attr("id", "fnd");
+            selectedWord = "";
+            $("#word").text("");
+            $("#x1").css("background", "none");
+            $("#y1").css("background", "none");
+            $("#y2").css("background", "none");
+            $("#z1").css("background", "none");
+            $("#z2").css("background", "none");
+        }else{
+            $("#word").effect("shake");
+            $("#word").text("");
+            selectedWord = "";
+            $("#x1").css("background", "none");
+            $("#y1").css("background", "none");
+            $("#y2").css("background", "none");
+            $("#z1").css("background", "none");
+            $("#z2").css("background", "none");
+            
+        }
+    }
+    $("#shuffle").animate({fontSize: "50"}, 200);
+    })
+    $("#cheat").click(function(){
+        
+        $("#vis p").fadeIn(1000)
+                    .fadeOut(1000);
+
+        for(var i = 0; i < words.length; i++){
+
+        }
+    })
+
+    $("#main").mousedown(function(){
+        
+        var r = Math.floor(Math.random()*255);
+        var g = Math.floor(Math.random()*255);
+        var b = Math.floor(Math.random()*255);
+        
+        $("#baslik").animate({color: `rgb(${r}, ${g}, ${b})`}, 100);
+    })
+
+
+    
+    
+</script>
+</html>

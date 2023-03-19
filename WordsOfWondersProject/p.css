@@ -1,0 +1,137 @@
+#main {
+    width: 500px;
+    height: 900px;
+    margin: 0px auto;
+    border: 5px dashed darkblue;
+    background-image: url(./nicolette-meade-RL3F99l0XYE-unsplash.jpg);
+    background-size: 500px 900px;
+    
+}
+body{
+    background-color:thistle;
+}
+#border{
+    background-image: linear-gradient(hwb(181 75% 0%), green);
+    width: 525px;
+    margin: 0 auto;
+}
+h1{
+    color:tomato;
+    text-align: center;
+    font-size: x-large;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#puzzle{
+    margin: 0 auto;
+    
+}
+#puzzle tr td#vis, #puzzle tr td#fnd{
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(234, 181, 238, 0.5);
+    font-size: 17px;
+    text-align: center;
+}
+
+#circle {
+    margin: 0 auto;
+    border: 2px solid darkblue;
+    border-radius: 360px;
+    width: 350px;
+    height: 350px;
+    margin-top: 10px;
+    background-color:  rgba(234, 181, 238, 0.8);
+    line-height: 70px;
+}
+
+#letters{
+    margin: 0 auto;
+    
+}
+#letters tr td{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+#top{
+    text-align: center;
+}
+#x1{
+    
+    width: 50px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 360px;
+}
+#circle div div{
+    
+    width: 50px;
+    height: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: tomato;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 360px;
+}
+#circle #x2{
+    justify-content: space-between;
+}
+#circle div{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: tomato;
+    font-size: 50px;
+    text-align: center;
+}
+#x2, #x3{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    
+}
+#puzzle #vis p, #puzzle #fnd p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: blue;
+    font-size: larger;
+}
+#word{
+    background-color: rgba(234, 181, 238, 0.8);
+    height: 30px;
+    width: min-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    color: tomato;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 360px;
+}
+#shuffle{
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    bottom: 200px;
+}
+
+#cheat{
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    color: pink;
+    margin-left: 350px;
+    border: 3px solid white;
+    border-radius: 360px;
+    background: orangered;
+}
+#cheat:active{
+    color: palevioletred;
+}
+#cheat:hover{
+    border: 3px dotted darkblue;
+}

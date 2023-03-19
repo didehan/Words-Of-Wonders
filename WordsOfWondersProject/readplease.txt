@@ -1,0 +1,1 @@
+please open the project with live server otherwise sometimes it does not operate animations.
